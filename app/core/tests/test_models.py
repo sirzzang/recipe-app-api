@@ -24,4 +24,8 @@ class ModelTests(TestCase):
             create_user(email, 'test123') # throwaway string assigned as pw
         
         self.assertEqual(user.email, email.lower()) # check if email normalized
-        
+    
+    def test_new_user_invalid_email(self):
+        '''test creating user with no email raises error'''
+        with self.assertRaises(ValueError):
+            get_user_model().objects.create_user(None, 'test123')
