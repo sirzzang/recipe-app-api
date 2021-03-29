@@ -18,6 +18,12 @@ class UserAdmin(BaseUserAdmin): # extend default django UserAdmin
         ),
         (_('Important Dates'), {'fields': ('last_login', )})
     )
+    add_fieldsets = (
+        (None, {
+            'classes': {'wide', },
+            'fields': {'email', 'password1', 'password2'}
+        }),
+    )
 
 
 # register UserAdmin(admin page) to our custom User model
