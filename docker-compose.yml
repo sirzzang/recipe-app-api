@@ -19,7 +19,7 @@ services:
       - db
   
   db:
-    image: postgress:10-alpine # postgres image on docker hub
+    image: postgres:10-alpine # postgres image on docker hub
     environment: # environment variable
       - POSTGRES_DB=app
       - POSTGRES_USER=postgres
